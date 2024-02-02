@@ -72,15 +72,51 @@ int main(int argc, const char * argv[]) {
             printf("\n");
     
     
- /*  Exercise V Use malloc to create all nodes, instead of create a struct!!
+ //  Exercise V Use malloc to create all nodes, instead of create a struct!!
          //use a loop to help
-          
-     */
+       
+        head = (struct node*) malloc(sizeof(struct node));
+        tmp=head;
 
-    /*  Exercise VI Free all node !!
+        for(i=2;i<=11;i+=3){
+            tmp->value=i;
+            if(i==11) tmp->next=NULL;
+            else{
+                tmp->next=(NodePtr)malloc(sizeof(struct node));
+            }
+                tmp=tmp->next;
+        
+        }
+
+        /*******************
+        tmp->value=2;
+        tmp->next=(NodePtr)malloc(sizeof(struct node));
+
+        tmp=tmp->next;
+        tmp->value=5;
+        tmp->next=(NodePtr)malloc(sizeof(struct node));
+
+        tmp=tmp->next;
+        tmp->value=8;
+        tmp->next=(NodePtr)malloc(sizeof(struct node));
+
+        tmp=tmp->next;
+        tmp->value=11;
+        tmp->next=NULL;
+        *******************/
+
+        
+
+    //  Exercise VI Free all node !!
          //use a loop to help
-          
-     */
+          while(head){
+            tmp=head;
+            head=head->next;
+            printf("%5d",tmp->value);
+            free(tmp);
+          }
+          printf("\n");
+     
     
     return 0;
 }
