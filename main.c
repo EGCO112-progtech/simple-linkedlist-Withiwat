@@ -42,7 +42,7 @@ int main(int argc, const char * argv[]) {
     e.next=&a;
     e.value=2;
     head=&e;
-    printf("%d\n", head->value );
+    printf("%d\n", head ->value );
     printf("%d\n", head ->next->value );
     printf("%d\n", head ->next ->next ->value );
     printf("%d\n", head ->next ->next ->next ->value );
@@ -51,13 +51,14 @@ int main(int argc, const char * argv[]) {
     typedef struct node* NodePtr;
     NodePtr tmp=head; //add temp value to faciliate
         
-    /*  Exercise III Use loop to print everything
-        int i,n=5;
+    //  Exercise III Use loop to print everything
+        int i,n=4;
         for(i=0;i<n;i++){
             printf("%3d", tmp->value);
+            tmp = tmp->next;
           // What is missing???
         }
-    */
+    
     
    /*  Exercise IV change to while loop!! (you can use NULL to help)
        
